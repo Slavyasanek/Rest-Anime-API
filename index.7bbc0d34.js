@@ -1,0 +1,2 @@
+fetch("https://api.consumet.org/anime/gogoanime/demon?page=2").then((function(n){return n.json()})).then((function(n){return console.log(n)})).catch((function(n){return console.log(n)})),fetch("https://api.consumet.org/anime/gogoanime/watch/spy-x-family-episode-1").then((function(n){return n.json()})).then((function(n){return console.log(n)})).catch((function(n){return console.log(n)})),console.log("wow");
+//# sourceMappingURL=index.7bbc0d34.js.map
