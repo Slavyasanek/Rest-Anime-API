@@ -1,21 +1,21 @@
 {
-  "name": "js-project",
+  "name": "rest-anime-api",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Slavyasanek.github.io/JS-project",
+  "homepage": "https://Slavyasanek.github.io/Rest-Anime-API",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /JS-project/"
+    "build": "parcel build src/*.html --public-url /Rest-Anime-API/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Slavyasanek/JS-project.git"
+    "url": "git+https://github.com/Slavyasanek/Rest-Anime-API.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Slavyasanek/JS-project/issues"
+    "url": "https://github.com/Slavyasanek/Rest-Anime-API/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
