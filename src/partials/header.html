@@ -1,36 +1,45 @@
 <header class="header dark-theme">
     <div class="container">
-        <div class="logo header___logo">
-            <svg width="100" height="100">
-                <use href="./images/icons.svg#icon-logo">
-            </svg>
-            <h1 class="header__title">
-                AnimeGoGo
-            </h1>
+        <div class="header__holder">
+            <a class="header__logo" href="./">
+                <svg width="100" height="100" class="logo">
+                    <use href="./images/icons.svg#icon-logo">
+                </svg>
+                <h1 class="header__title">
+                    AnimeGoGo
+                </h1>
+            </a>
+            <form class="header__search dark-theme">
+                <input type="text" id="search-box" placeholder="Naruto" class="header__search__input">
+                <button type="submit" class="header__search__btn dark-theme">
+                    <svg width="30" height="30">
+                        <use href="./images/icons.svg#icon-search"></use>
+                    </svg>
+                </button>
+            </form>
         </div>
         <nav class="header__nav">
-            <a href="./" class="header__link">
-                Home
+            <a class="header__link dark-theme">
+                Recent release
             </a>
-            <a href="" class="header__link">
+            <a href="" class="header__link dark-theme">
                 Popular
             </a>
         </nav>
         <div class="header__interaction">
-            <button>
+            <button class="sign-up__btn">
                 Sign up
             </button>
             <div class="theme-switcher">
-                <svg width="30" height="30" class="icon-light-theme">
+                <svg width="30" height="30" class="icon-theme">
                     <use href="./images/icons.svg#icon-light-theme"></use>
                 </svg>
-                <div class="theme-switcher__cotnainer">
-                    <input type="checkbox" id="theme-switcher" name="theme-switcher" class="theme-switcher-checkbox">
-                    <div class="theme-switcher__track">
-                        <div class="theme-switcher__circle"></div>
+                <div class="theme-switcher__container">
+                    <div class="theme-switcher__track dark-theme">
+                        <div class="theme-switcher__circle dark-theme"></div>
                     </div>
                 </div>
-                <svg width="28" height="28" class="icon-dark-theme">
+                <svg width="28" height="28" class="icon-theme chosen">
                     <use href="./images/icons.svg#icon-dark-theme"></use>
                 </svg>
             </div>

@@ -1,4 +1,7 @@
 .header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-width: 300px;
   &.dark-theme {
     background-color: $oddColorDarkTheme;
   }
@@ -7,5 +10,104 @@
   }
   &__title {
     font-family: 'Bruno Ace SC', cursive;
+    @extend %transition;
   }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &:hover,
+    &:active,
+    &:focus {
+      .logo {
+        transform: scale(1.06);
+      }
+      .header__title {
+        color: $decorativeColor;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  &__link {
+    text-transform: capitalize;
+    font-size: 22px;
+  }
+  &__interaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: space-between;
+  }
+}
+
+.header__search {
+  display: flex;
+  justify-content: space-between;
+  @extend %transition;
+  @include max_767 {
+    margin-top: 20px;
+  }
+  &.dark-theme {
+    border-bottom: 2px solid $decorativeColorLight;
+    &:focus-within {
+      border-bottom-color: $decorativeColorDark;
+      .header__search__btn {
+        fill: $decorativeColorDark;
+      }
+    }
+    &.light-theme {
+      border-bottom: 2px solid $decorativeColorDark;
+    //   &:focus-within {
+    //   }
+    }
+  }
+  &__btn {
+    background-color: transparent;
+    border: none;
+    @extend %transition;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    &.dark-theme {
+      fill: $decorativeColorLight;
+      &:hover,
+      &:focus,
+      &:active {
+        fill: $decorativeColorDark;
+      }
+    }
+  }
+  &__input {
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  @extend %transition;
+}
+
+.sign-up__btn {
+    background-color: $decorativeColor;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10;
+}
+
+.anime-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

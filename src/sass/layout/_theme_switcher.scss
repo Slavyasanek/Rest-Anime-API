@@ -1,0 +1,39 @@
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &__track {
+    height: 20px;
+    width: 40px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    &.light-theme {
+      background-color: $mainBcgDarkTheme;
+    }
+    &.dark-theme {
+      background-color: $mainBcgLightTheme;
+    }
+  }
+  &__circle {
+    height: 18px;
+    width: 18px;
+    background-color: $decorativeColor;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    @extend %transition;
+    &.dark-theme {
+      transform: translateX(100%);
+    }
+  }
+}
+
+.icon-theme {
+  fill: $decorativeGreyColor;
+  @extend %transition;
+  &.chosen {
+    fill: $decorativeColor;
+  }
+}
