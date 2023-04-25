@@ -1,10 +1,9 @@
-fetch('https://api.consumet.org/anime/gogoanime/demon?page=2')
+fetch('https://api.consumet.org/anime/gogoanime/recent-episodes')
 .then(r => r.json())
 .then(d => console.log(d))
 .catch(e => console.log(e))
 
-fetch('https://api.consumet.org/anime/gogoanime/watch/spy-x-family-episode-1')
+fetch('https://api.consumet.org/anime/gogoanime/info/spy-x-family')
 .then(r => r.json())
 .then(d => console.log(d))
 .catch(e => console.log(e))
-console.log(`wow`);
