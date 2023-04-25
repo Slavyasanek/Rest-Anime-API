@@ -1,0 +1,2 @@
+fetch("https://api.consumet.org/anime/gogoanime/recent-episodes").then((function(n){return n.json()})).then((function(n){return console.log(n)})).catch((function(n){return console.log(n)})),fetch("https://api.consumet.org/anime/gogoanime/info/spy-x-family").then((function(n){return n.json()})).then((function(n){return console.log(n)})).catch((function(n){return console.log(n)}));
+//# sourceMappingURL=index.72201b87.js.map
