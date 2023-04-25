@@ -1,30 +1,22 @@
 import { getRecentUploads } from "./api";
-import {refs} from './refs';
+import { refs } from './refs';
 import { createPaginationForRecentRealese } from "./pagination";
-const animeInsert = document.querySelector('.anime-list');
+import renderCard from './renderCard';
+
+
 
 const getAnime = () => {
     getRecentUploads(1)
         .then(({ results }) => {
-            const posts = results.map(({ title, image }) =>
-                `<li>
-            <p>${title}</p>
-            <img src="${image}" width="100">
-            </li>`
-            ).join("");
-            animeInsert.insertAdjacentHTML("beforeend", posts)
+            const posts = renderCard(results);
+            refs.animeList.insertAdjacentHTML("beforeend", posts)
             const pagination = createPaginationForRecentRealese(results.length);
-            pagination.on('beforeMove', ({page}) => {
+            pagination.on('beforeMove', ({ page }) => {
                 refs.animeList.innerHTML = "";
-                getRecentUploads(page).then(({results}) => {
-                    const posts = results.map(({ title, image }) =>
-                    `<li>
-                <p>${title}</p>
-                <img src="${image}" width="100">
-                </li>`
-                ).join("");
-                animeInsert.insertAdjacentHTML("beforeend", posts)
-    
+                getRecentUploads(page).then(({ results }) => {
+                    const posts = renderCard(results);
+                    refs.animeList.insertAdjacentHTML("beforeend", posts)
+
                 })
             })
         })
