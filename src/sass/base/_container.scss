@@ -1,0 +1,15 @@
+.container {
+    max-width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    @include min_768 {
+        max-width: 768px;
+    }
+    @include min_1024 {
+        max-width: 1024px;
+    }
+    @include min_1440 {
+        max-width: 1440px;
+    }
+}

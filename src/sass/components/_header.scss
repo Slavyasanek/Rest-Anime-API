@@ -1,0 +1,11 @@
+.header {
+  &.dark-theme {
+    background-color: $oddColorDarkTheme;
+  }
+  &.light-theme {
+    background-color: $oddColorLightTheme;
+  }
+  &__title {
+    font-family: 'Bruno Ace SC', cursive;
+  }
+}

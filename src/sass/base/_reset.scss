@@ -3,11 +3,18 @@ html {
 }
 
 body {
-    background-color: $mainBcg;
-    color: $textColor;
     padding: 0;
     margin: 0;
-    font-family: 'Mynerve', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    &.dark-theme {
+        background-color: $mainBcgDarkTheme;
+        color: $textColorDarkTheme;
+    }
+    &.light-theme {
+        background-color: $mainBcgLightTheme;
+        color: $textColorLightTheme;
+    }
 }
 
 ul, ol {
@@ -16,13 +23,11 @@ ul, ol {
     margin: 0;
 }
 
-.wrapper {
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 1200px;
-}
-
 a {
     color: inherit;
     text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
 }
