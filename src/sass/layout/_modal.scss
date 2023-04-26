@@ -1,0 +1,78 @@
+body.lock {
+  overflow: hidden;
+}
+
+// backdrop
+.popup {
+  visibility: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
+  background-color: rgba(41, 48, 61, 0.2);
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.4s ease 0s;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .popup__content {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.modal {
+  &__body {
+    background-color: $mainBcgDarkTheme;
+    position: absolute;
+    padding: 40px 20px; 
+    width: 50%;
+    // height: 50%;
+    min-width: 320px;
+    overflow: scroll;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    &-icon {
+        width: 20px;
+        height: 20px;
+        fill: $textColorDarkTheme;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 5px;
+  }
+  &__title {
+    font-size: 32px;
+    text-transform: uppercase;
+    @include max_767 {
+        margin-top: 20px;
+        text-align: center;
+    }
+  }
+  &__info {
+    color: $decorativeColor;
+  }
+}

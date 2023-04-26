@@ -5,13 +5,11 @@ export const refs = {
     searchBtn: document.querySelector('.header__search__btn'),
     themeSwitchBtn: document.querySelector('.theme-switcher__circle'),
     themeSwitchTrack: document.querySelector('.theme-switcher__track'),
+
     headerLinks: document.querySelectorAll('.header__link'),
     animeList: document.querySelector('.anime-list'),
     pagination: document.querySelector('.tui-pagination'),
+    popup: document.querySelector('.popup'),
+    popupCloseBtn: document.querySelector('[data-popup-close]'),
+    popupContent: document.querySelector('.popup__content'),
 }
-
-
-refs.themeSwitchTrack.addEventListener("click", () => {
-    refs.themeSwitchBtn.classList.toggle('dark-theme');
-    refs.themeSwitchTrack.classList.toggle('dark-theme');
-})
