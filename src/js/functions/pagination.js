@@ -1,7 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import {refs} from '../refs';
-const TUI_VISIBLE_PAGES = 5;
 
 
 export const createPaginationForRecentRealese = (totalItems) => {
