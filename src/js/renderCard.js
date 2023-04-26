@@ -4,6 +4,9 @@ const renderCard = (data) => {
         <div class="card__thumb">
             <img src="${image}" alt="${title}" class="card__img">
             <p class="card__episode">NEW <span class="card__episode-num">${episodeNumber}</span> EPISODE</p>
+            <div class="add-like">
+                <span class="icon-like">&#x2764;</span>
+            </div>
         </div>
         <h3 class="card__title">${title}</h3>
         </li>`

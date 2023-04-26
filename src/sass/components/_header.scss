@@ -2,6 +2,20 @@
   padding-top: 40px;
   padding-bottom: 40px;
   min-width: 300px;
+  @include min_1024 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include min_1440 {
+    padding-bottom: 30px;
+  }
+  &--flex {
+    @include min_1024 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
   &.dark-theme {
     background-color: $oddColorDarkTheme;
   }
@@ -11,11 +25,20 @@
   &__title {
     font-family: 'Bruno Ace SC', cursive;
     @extend %transition;
+    @include min_1024 {
+      font-size: 28px;
+    }
+    @include min_1440 {
+      font-size: 34px;
+    }
   }
   &__logo {
     display: flex;
     align-items: center;
     gap: 5px;
+    @include min_1440 {
+      gap: 10px;
+    }
     &:hover,
     &:active,
     &:focus {
@@ -29,19 +52,77 @@
   }
   &__nav {
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    @include max_767 {
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    @include min_768 {
+      gap: 20px;
+      align-items: center;
+    }
+    @include min_1024 {
+      gap: 10px;
+    }
+    @include min_1440 {
+      gap: 40px;
+    }
   }
   &__link {
     text-transform: capitalize;
-    font-size: 22px;
+    font-size: 20px;
+    cursor: pointer;
+    &.current {
+      color: $decorativeColor;
+    }
+    @include min_1024 {
+      font-size: 18px;
+    }
+    @include min_1440 {
+      font-size: 22px;
+    }
   }
   &__interaction {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 50px;
-    justify-content: space-between;
+    @include max_767 {
+      margin-top: 30px;
+      justify-content: space-between;
+    }
+    @include min_768 {
+      gap: 30px;
+    }
+    @include min_1024 {
+      gap: 10px;
+    }
+    @include min_1440 {
+      gap: 30px;
+    }
+  }
+  &__holder {
+    @include min_768 {
+      display: flex;
+    }
+    @include min_768_max_1023 {
+      flex-direction: row;
+      justify-content: space-between;
+      &:nth-child(2) {
+        margin-top: 30px;
+      }
+    }
+    @include min_1024 {
+      gap: 10px;
+      &:nth-child(2) {
+        gap: 20px;
+      }
+    }
+    @include min_1440 {
+      align-items: center;
+      gap: 40px;
+      &:nth-child(2) {
+        gap: 40px;
+      }
+    }
   }
 }
 
@@ -51,6 +132,15 @@
   @extend %transition;
   @include max_767 {
     margin-top: 20px;
+  }
+  @include min_768 {
+    width: 350px;
+  }
+  @include min_1024 {
+    width: 250px;
+  }
+  @include min_1440 {
+    width: 350px;
   }
   &.dark-theme {
     border-bottom: 2px solid $decorativeColorLight;
@@ -62,8 +152,8 @@
     }
     &.light-theme {
       border-bottom: 2px solid $decorativeColorDark;
-    //   &:focus-within {
-    //   }
+      //   &:focus-within {
+      //   }
     }
   }
   &__btn {
@@ -90,6 +180,9 @@
     color: inherit;
     width: 100%;
     font-size: 20px;
+    @include min_1440 {
+      padding: 10px;
+    }
   }
 }
 
@@ -97,12 +190,28 @@
   width: 50px;
   height: 50px;
   @extend %transition;
+  @include min_1440 {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.sign-up__btn {
-    background-color: $decorativeColor;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10;
+.library__btn {
+  background-color: $decorativeColor;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 10px 5px 10px;
+  font-size: 18px;
+  color: $textColorDarkTheme;
+  @extend %transition;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $decorativeColorDark;
+  }
+  @include min_1440 {
+    font-size: 22px;
+    padding: 9px 10px 6px 10px;
+  }
 }
-
