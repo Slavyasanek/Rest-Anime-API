@@ -1,0 +1,23 @@
+.btn {
+  &--blue {
+    @extend %btn;
+    @extend %transition;
+    background-color: $decorativeColor;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $decorativeColorDark;
+    }
+  }
+  &--red {
+    @extend %btn;
+    @extend %transition;
+    background-color: $likeColorLight;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $likeColorDark;
+    }
+  }
+}
+

@@ -10,10 +10,12 @@ function popupOpen (event) {
     const currentAnime = event.target.closest('li').id;
     getAnimeInfo(currentAnime)
     .then(d => {
+        console.log(d);
         const popupContent = renderModal(d);
         refs.popupContent.insertAdjacentHTML("beforeend", popupContent);
         finishLoad()
     })  
+
 }
 
 function popupClose () {

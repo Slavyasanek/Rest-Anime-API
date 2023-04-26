@@ -1,7 +1,7 @@
 import { getRecentUploads } from "./functions/api";
 import { refs } from './refs';
 import { createPaginationForRecentRealese } from "./functions/pagination";
-import renderCard from './renderCard';
+import renderCard from './functions/renderCard';
 import { finishLoad, startLoading } from "./functions/loading";
 
 

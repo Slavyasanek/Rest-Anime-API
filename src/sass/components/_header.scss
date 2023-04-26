@@ -197,19 +197,7 @@
 }
 
 .library__btn {
-  background-color: $decorativeColor;
-  border: none;
-  border-radius: 5px;
   padding: 7px 10px 5px 10px;
-  font-size: 18px;
-  color: $textColorDarkTheme;
-  @extend %transition;
-  cursor: pointer;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: $decorativeColorDark;
-  }
   @include min_1440 {
     font-size: 22px;
     padding: 9px 10px 6px 10px;

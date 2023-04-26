@@ -1,9 +1,11 @@
 @import './common';
 @import './utils/variables';
 @import './utils/mixins';
+@import './utils/placeholders';
 @import './base/reset';
 @import './base/container';
 @import './layout/theme_switcher';
+@import './layout/btns';
 @import './components/header';
 @import './components/anime-list';
 @import './layout/modal';

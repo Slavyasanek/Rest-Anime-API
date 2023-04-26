@@ -36,7 +36,7 @@ body.lock {
   &__body {
     background-color: $mainBcgDarkTheme;
     position: absolute;
-    padding: 40px 20px; 
+    padding: 40px 20px;
     width: 50%;
     // height: 50%;
     min-width: 320px;
@@ -45,6 +45,22 @@ body.lock {
     left: 50%;
     transform: translateX(-50%);
     min-width: 300px;
+    @include min_768 {
+      width: 80%;
+    }
+    @include min_1024 {
+      overflow: auto;
+      width: 820px;
+    }
+    @include min_1440 {
+      padding: 60px 40px;
+    }
+  }
+  &__holder {
+    @include min_768 {
+      display: flex;
+      flex-direction: row;
+    }
   }
   &__close {
     position: absolute;
@@ -52,10 +68,17 @@ body.lock {
     right: 10px;
     background-color: transparent;
     border: none;
+    padding: 0;
     &-icon {
-        width: 20px;
-        height: 20px;
-        fill: $textColorDarkTheme;
+      width: 20px;
+      height: 20px;
+      fill: $textColorDarkTheme;
+      @extend %transition;
+      &:hover,
+      &:active,
+      &:focus {
+        fill: $decorativeGreyColor;
+      }
     }
   }
   &__img {
@@ -63,16 +86,93 @@ body.lock {
     height: 100%;
     display: block;
     border-radius: 5px;
+    @include min_768 {
+      width: 300px;
+      margin-right: 30px;
+    }
   }
   &__title {
     font-size: 32px;
     text-transform: uppercase;
     @include max_767 {
-        margin-top: 20px;
-        text-align: center;
+      margin-top: 20px;
+      text-align: center;
+    }
+    @include min_768 {
+      font-size: 22px;
     }
   }
   &__info {
     color: $decorativeColor;
+  }
+  &__details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 10px;
+    @include max_767 {
+      justify-content: center;
+    }
+  }
+  &__btn {
+    padding: 7px 7px 3px 7px;
+  }
+  &__descr {
+    margin-top: 20px;
+  }
+  &__episodes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  &__episode {
+    background-color: $oddColorLightTheme;
+    border-radius: 5px;
+    padding: 3px;
+    color: $textColorLightTheme;
+    display: flex;
+    gap: 5px;
+    @extend %transition;
+    &-title {
+      color: $decorativeColorDark;
+      position: relative;
+      &::before {
+        content: '';
+        height: 25px;
+        width: 1px;
+        background-color: $decorativeGreyColor;
+        position: absolute;
+        left: -3.5px;
+        top: -3px;
+        @include min_1024 {
+          height: 33px;
+          top: -8px;
+        }
+      }
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $lightDecorative;
+    }
+    @include min_1024 {
+      font-size: 18px;
+      padding: 8px 5px 5px 5px;
+    }
+  }
+  &__suggestion {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  &__link {
+    color: $decorativeColorDark;
   }
 }
