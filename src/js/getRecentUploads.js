@@ -28,8 +28,4 @@ const getAnime = () => {
 }
 
 
-window.addEventListener("load", () => {
-    startLoading();
-    getAnime();
-    finishLoad();
-})
+refs.recentBtn.addEventListener("click", getAnime);

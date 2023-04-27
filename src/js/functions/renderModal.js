@@ -1,4 +1,4 @@
-const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, type, genres, description, otherName, episodes }) => {
+const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, type, genres, description, otherName, episodes, subOrDub }) => {
   const episodeList = episodes.map(episode =>
     `<a href="${episode.url}" target="_blank" rel="noreferrer noopener" class="modal__episode">EP<span class="modal__episode-title">${episode.number}</span></a>
     `
@@ -26,7 +26,7 @@ const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, typ
     <button class="btn--blue modal__btn" data-queue="${id}">Add to queue</button>
   </div>
   <p class="modal__descr">${description}</p>
-  <h2 class="modal__suggestion">Watch ${title.includes('(Dub)') ? 'dubbed' : 'subbed'} anime on 
+  <h2 class="modal__suggestion">Watch ${subOrDub === 'dub' ? 'dubbed' : 'subbed'} anime on 
   <a href="https://gogoanime.cl/" target="_blank" rel="noopener noreferrer" class="modal__link">GoGoAnime.cl</a></h2>
   <div class="modal__episodes">${episodeList ? episodeList : 'There are no episodes yet. '}</div>`
 }
