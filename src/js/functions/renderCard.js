@@ -14,4 +14,20 @@ const renderCard = (data) => {
     return posts;
 }
 
-export default renderCard;
+const renderSearchCard = (data) => {
+    const posts = data.map(({title, image, id, releaseDate}) => 
+    `<li class="card" id="${id}">
+    <div class="card__thumb">
+        <img src="${image}" alt="${title}" class="card__img">
+        <p class="card__episode"><span class="card__episode-num">${releaseDate ? releaseDate.replace("Released: ", "") : `Unknown`}</span> YEAR</p>
+        <div class="add-like">
+            <span class="icon-like">&#x2764;</span>
+        </div>
+    </div>
+    <h3 class="card__title">${title.replaceAll('"', '')}</h3>
+    </li>`
+).join("");
+return posts;
+}
+
+export {renderCard, renderSearchCard}

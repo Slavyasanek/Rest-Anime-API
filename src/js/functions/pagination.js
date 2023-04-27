@@ -12,3 +12,13 @@ export const createPaginationForRecentRealese = (totalItems) => {
     const pagination = new Pagination(refs.pagination, options);
     return pagination;
 }
+
+export const createPagination = (totalItems, page) => {
+    const options =  {
+        itemsPerPage: 20,
+        totalItems: totalItems,
+        visiblePages: page > 5 ? 5 : page,
+    }
+    const pagination = new Pagination(refs.pagination, options);
+    return pagination;
+}
