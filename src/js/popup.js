@@ -15,16 +15,21 @@ function popupOpen(event) {
             const popupContent = renderModal(d);
             refs.popupContent.insertAdjacentHTML("beforeend", popupContent);
             finishLoad();
+
             const curPoster = document.querySelector('.modal__img');
             curPoster.addEventListener("click", loadFullPoster);
-    })
-
+    });
+    refs.popup.addEventListener("click", backdropClose);
+    window.addEventListener("keydown", escClose);
 }
 
 function popupClose() {
     refs.body.classList.remove('lock');
     refs.popup.classList.remove('open');
     refs.popupContent.innerHTML = "";
+    
+    refs.popup.removeEventListener("click", backdropClose);
+    window.removeEventListener("keydown", escClose);
 }
 
 function escClose(event) {
@@ -35,6 +40,11 @@ function escClose(event) {
     }
 }
 
+function backdropClose(event) {
+    if (event.currentTarget === event.target) {
+        popupClose();
+    }
+}
+
 refs.animeList.addEventListener("click", popupOpen);
 refs.popupCloseBtn.addEventListener("click", popupClose);
-window.addEventListener("keydown", escClose);
