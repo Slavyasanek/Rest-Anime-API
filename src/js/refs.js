@@ -15,6 +15,7 @@ export const refs = {
     pagination: document.querySelector('.tui-pagination'),
     popup: document.querySelector('.popup'),
     popupCloseBtn: document.querySelector('[data-popup-close]'),
+    popupCloseIcon: document.querySelector('.modal__close-icon'),
     popupContent: document.querySelector('.popup__content'),
     modal: document.querySelector('.modal__body')
 }

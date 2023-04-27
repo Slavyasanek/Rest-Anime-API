@@ -22,8 +22,8 @@ const setDarkTheme = () => {
     refs.modal.classList.remove('light-theme');
     refs.modal.classList.add('dark-theme');
 
-    refs.popupCloseBtn.classList.remove('light-theme');
-    refs.popupCloseBtn.classList.add('dark-theme');
+    refs.popupCloseIcon.classList.remove('light-theme');
+    refs.popupCloseIcon.classList.add('dark-theme');
 }
 
 const setLightTheme = () => {
@@ -48,8 +48,8 @@ const setLightTheme = () => {
     refs.modal.classList.remove('dark-theme');
     refs.modal.classList.add('light-theme');
 
-    refs.popupCloseBtn.classList.remove('dark-theme');
-    refs.popupCloseBtn.classList.add('light-theme');
+    refs.popupCloseIcon.classList.remove('dark-theme');
+    refs.popupCloseIcon.classList.add('light-theme');
 }
 
 export {setDarkTheme, setLightTheme};

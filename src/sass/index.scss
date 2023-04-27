@@ -2,10 +2,14 @@
 @import './utils/variables';
 @import './utils/mixins';
 @import './utils/placeholders';
+
 @import './base/reset';
 @import './base/container';
+
 @import './layout/theme_switcher';
 @import './layout/btns';
+@import './layout/pagination';
+
 @import './components/header';
 @import './components/anime-list';
 @import './layout/modal';
