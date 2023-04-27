@@ -8,9 +8,7 @@
     border-radius: 10px;
     position: relative;
     cursor: pointer;
-    &.light-theme {
-      background-color: $mainBcgDarkTheme;
-    }
+    background-color: $oddColorDarkTheme;
     &.dark-theme {
       background-color: $mainBcgLightTheme;
     }

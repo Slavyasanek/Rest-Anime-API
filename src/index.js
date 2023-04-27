@@ -9,7 +9,7 @@ fetch('https://api.consumet.org/anime/gogoanime/info/spy-x-family')
 .catch(e => console.log(e))
 
 
-import './js/functions/color-switcher';
+import './js/color-switcher';
 import './js/functions/api'
 import './js/getRecentUploads';
 import './js/popup'

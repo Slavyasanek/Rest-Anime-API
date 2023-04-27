@@ -8,7 +8,7 @@ const renderCard = (data) => {
                 <span class="icon-like">&#x2764;</span>
             </div>
         </div>
-        <h3 class="card__title">${title}</h3>
+        <h3 class="card__title">${title.replaceAll('"', '')}</h3>
         </li>`
     ).join("");
     return posts;

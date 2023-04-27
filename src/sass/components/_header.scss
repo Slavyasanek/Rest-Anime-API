@@ -150,10 +150,14 @@
         fill: $decorativeColorDark;
       }
     }
-    &.light-theme {
-      border-bottom: 2px solid $decorativeColorDark;
-      //   &:focus-within {
-      //   }
+  }
+  &.light-theme {
+    border-bottom: 2px solid $decorativeColor;
+    &:focus-within {
+      border-bottom-color: $decorativeColorDark;
+      .header__search__btn {
+        fill: $decorativeColorDark;
+      }
     }
   }
   &__btn {
@@ -165,6 +169,14 @@
     height: 40px;
     &.dark-theme {
       fill: $decorativeColorLight;
+      &:hover,
+      &:focus,
+      &:active {
+        fill: $decorativeColorDark;
+      }
+    }
+    &.light-theme {
+      fill: $decorativeColor;
       &:hover,
       &:focus,
       &:active {

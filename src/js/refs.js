@@ -5,6 +5,8 @@ export const refs = {
     searchBtn: document.querySelector('.header__search__btn'),
     themeSwitchBtn: document.querySelector('.theme-switcher__circle'),
     themeSwitchTrack: document.querySelector('.theme-switcher__track'),
+    darkThemeIcon: document.querySelector('[data-switch="dark-theme"]'),
+    lightThemeIcon: document.querySelector('[data-switch="light-theme"]'),
 
     headerLinks: document.querySelectorAll('.header__link'),
     animeList: document.querySelector('.anime-list'),
@@ -12,4 +14,5 @@ export const refs = {
     popup: document.querySelector('.popup'),
     popupCloseBtn: document.querySelector('[data-popup-close]'),
     popupContent: document.querySelector('.popup__content'),
+    modal: document.querySelector('.modal__body')
 }

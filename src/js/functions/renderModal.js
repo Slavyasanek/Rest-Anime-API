@@ -10,7 +10,7 @@ const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, typ
     class="modal__img"
   />
   <div class="modal__details">
-    <h1 class="modal__title">${title}y</h1>
+    <h1 class="modal__title">${title.replaceAll('"', '')}</h1>
     <ul class="modal__details">
       <li class="modal__item">Date: <span class="modal__info">${releaseDate}</span></li>
       <li class="modal__item">Status: <span class="modal__info">${status}</span></li>
