@@ -4,6 +4,7 @@ import { renderSearchCard } from './functions/renderCard';
 import { finishLoad, startLoading } from "./functions/loading";
 import { searchAnime } from './functions/api';
 import { infoNoResults } from './functions/notify';
+import { setCurrentLink, setDatasetAnimeList } from './functions/changeCurrentLink';
 
 const outputSearchResults = async (event) => {
     event.preventDefault();
@@ -12,6 +13,8 @@ const outputSearchResults = async (event) => {
     if (query === "") {
         return;
     }
+    setDatasetAnimeList('');
+    setCurrentLink();
     startLoading();
     const results = await searchAnime(query, page);
     if (results.results.length === 0) {

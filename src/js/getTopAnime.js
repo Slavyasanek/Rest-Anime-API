@@ -3,10 +3,11 @@ import { renderTopCard } from './functions/renderCard';
 import { finishLoad, startLoading } from "./functions/loading";
 import { getTopAnime } from './functions/api';
 import { createPagination } from './functions/pagination';
+import { setCurrentLink, setDatasetAnimeList } from './functions/changeCurrentLink';
 
-const outputTopAnime = async (event) => {
-
-    // startLoading();
+const outputTopAnime = async () => {
+    setDatasetAnimeList('top');
+    setCurrentLink();
     let page = 1;
     const results = await getTopAnime(page);
     let cards = renderTopCard(results.results);
@@ -37,4 +38,5 @@ refs.popularBtn.addEventListener("click", () => {
     outputTopAnime();
     finishLoad();
 });
+
 window.addEventListener("load", outputTopAnime)
