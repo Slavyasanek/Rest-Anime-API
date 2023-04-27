@@ -38,10 +38,17 @@ async function searchAnime(query, number) {
     }
 }
 
-export {getRecentUploads, getAnimeInfo, searchAnime}
-
-searchAnime('my', 1).then(d => {
-    if (d.hasNextPage === true) {
-        searchAnime('my', 20).then(d => console.log(d))
+async function getTopAnime(pageValue) {
+    const params = {
+        page: pageValue,
     }
-})
+    try {
+        const { data } = await axios.get(URL_FOR_TOP, {params});
+        return data;
+    } catch (err) {
+        throw new Error(err.message);
+    }
+}
+ getTopAnime(48).then(d => console.log(d));
+ 
+export {getRecentUploads, getAnimeInfo, searchAnime, getTopAnime}
