@@ -19,7 +19,6 @@ body.lock {
   overflow-y: scroll;
   overflow-x: hidden;
   transition: all 0.4s ease 0s;
-
   &.open {
     opacity: 1;
     visibility: visible;
@@ -34,22 +33,27 @@ body.lock {
 
 .modal {
   &__body {
-    background-color: $mainBcgDarkTheme;
     position: absolute;
     padding: 40px 20px;
     width: 50%;
-    // height: 50%;
     min-width: 320px;
     overflow: scroll;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     min-width: 300px;
+    z-index: 999;
+    &.light-theme {
+      background-color: $mainBcgLightTheme;
+    }
+    &.dark-theme {
+      background-color: $mainBcgDarkTheme;
+    }
     @include min_768 {
+      overflow: auto;
       width: 80%;
     }
     @include min_1024 {
-      overflow: auto;
       width: 820px;
     }
     @include min_1440 {
@@ -72,12 +76,17 @@ body.lock {
     &-icon {
       width: 20px;
       height: 20px;
-      fill: $textColorDarkTheme;
       @extend %transition;
       &:hover,
       &:active,
       &:focus {
         fill: $decorativeGreyColor;
+      }
+      &.light-theme {
+        fill: $textColorLightTheme;
+      }
+      &.dark-theme {
+        fill: $textColorDarkTheme;
       }
     }
   }
@@ -86,6 +95,7 @@ body.lock {
     height: 100%;
     display: block;
     border-radius: 5px;
+    cursor: pointer;
     @include min_768 {
       width: 300px;
       margin-right: 30px;
