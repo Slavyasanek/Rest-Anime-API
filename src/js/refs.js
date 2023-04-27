@@ -8,7 +8,9 @@ export const refs = {
     darkThemeIcon: document.querySelector('[data-switch="dark-theme"]'),
     lightThemeIcon: document.querySelector('[data-switch="light-theme"]'),
 
-    headerLinks: document.querySelectorAll('.header__link'),
+    popularBtn: document.querySelector('[data-link="popular"]'),
+    recentBtn: document.querySelector('[data-link="recent-uploads"]'),
+
     animeList: document.querySelector('.anime-list'),
     pagination: document.querySelector('.tui-pagination'),
     popup: document.querySelector('.popup'),

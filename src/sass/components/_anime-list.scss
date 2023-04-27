@@ -1,6 +1,7 @@
 .anime {
   padding-top: 20px;
   padding-bottom: 20px;
+  min-width: 300px;
   @include min_768 {
     padding-top: 30px;
     padding-bottom: 30px;
