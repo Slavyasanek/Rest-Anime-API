@@ -8,7 +8,6 @@ export const loadFullPoster = () => {
         return largePhoto.close();
     }
     const selectImage = event.target.src;
-    console.log(selectImage)
     const largePhoto = basicLightbox.create(
         `<img src="${selectImage}">`, {
         onShow: () => {
