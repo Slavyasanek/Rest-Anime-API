@@ -34,4 +34,14 @@
             width: 768px;
         }
     }
+    &__btn {
+        padding: 7px 10px 5px 10px;
+        @include min_1440 {
+          font-size: 22px;
+          padding: 9px 10px 6px 10px;
+        }
+        &:disabled {
+            background-color: $decarativeShadowColor;
+        }
+      }
 }
