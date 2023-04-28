@@ -1,6 +1,15 @@
-<main>
-    <div class="container">
-        <div class="library__btns"></div>
-        <ul class="library__list"></ul>
+<main class="anime">
+  <div class="container">
+    <div class="library__btns">
+      <button class="library__btn btn--blue" data-library="liked">Liked</button>
+      <button class="library__btn btn--blue" data-library="queue">
+        Enqueued
+      </button>
     </div>
+    <ul class="anime-list js-storage" data-contain=""></ul>
+    <div
+      id="anime-pagination tui-pagination-container"
+      class="tui-pagination"
+    ></div>
+  </div>
 </main>
