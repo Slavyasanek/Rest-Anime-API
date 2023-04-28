@@ -23,9 +23,22 @@ export const likeAnime = (event) => {
     }
 
 }
-
 if (refs.animeList) {
     refs.animeList.addEventListener("click", likeAnime);
+}
+
+export const dislikeAnimeLibrary = (event) => {
+    if (event.target.nodeName !== 'SPAN' || !event.target.classList.contains('icon-like')) {
+        return;
+    }
+    console.log(event.target);
+    const currentId = event.target.closest('li').id;
+    removeLikedAnime(currentId);
+    event.target.closest('li').remove();
+}
+
+if (refs.storageList) {
+    refs.storageList.addEventListener("click", dislikeAnimeLibrary);
 }
 
 export const queueAnime = (event) => {
