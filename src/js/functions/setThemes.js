@@ -16,11 +16,13 @@ const setDarkTheme = () => {
     refs.footer.classList.remove('light-theme');
     refs.footer.classList.add('dark-theme');
 
-    refs.searchForm.classList.remove('light-theme');
-    refs.searchForm.classList.add('dark-theme');
+    if (refs.searchForm) {
+        refs.searchForm.classList.remove('light-theme');
+        refs.searchForm.classList.add('dark-theme');
 
-    refs.searchBtn.classList.remove('light-theme');
-    refs.searchBtn.classList.add('dark-theme');
+        refs.searchBtn.classList.remove('light-theme');
+        refs.searchBtn.classList.add('dark-theme');
+    }
 
     refs.modal.classList.remove('light-theme');
     refs.modal.classList.add('dark-theme');
@@ -45,11 +47,13 @@ const setLightTheme = () => {
     refs.footer.classList.remove('dark-theme');
     refs.footer.classList.add('light-theme');
 
-    refs.searchForm.classList.remove('dark-theme');
-    refs.searchForm.classList.add('light-theme');
+    if (refs.searchForm) {
+        refs.searchForm.classList.remove('dark-theme');
+        refs.searchForm.classList.add('light-theme');
 
-    refs.searchBtn.classList.remove('dark-theme');
-    refs.searchBtn.classList.add('light-theme');
+        refs.searchBtn.classList.remove('dark-theme');
+        refs.searchBtn.classList.add('light-theme');
+    }
 
     refs.modal.classList.remove('dark-theme');
     refs.modal.classList.add('light-theme');
@@ -58,4 +62,4 @@ const setLightTheme = () => {
     refs.popupCloseIcon.classList.add('light-theme');
 }
 
-export {setDarkTheme, setLightTheme};
+export { setDarkTheme, setLightTheme };
