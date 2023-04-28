@@ -1,6 +1,7 @@
 export const refs = {
     body: document.body,
     header: document.querySelector('.header'),
+    footer: document.querySelector('.footer'),
     searchForm: document.querySelector('.header__search'),
     searchBtn: document.querySelector('.header__search__btn'),
     themeSwitchBtn: document.querySelector('.theme-switcher__circle'),

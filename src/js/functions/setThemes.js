@@ -13,6 +13,9 @@ const setDarkTheme = () => {
     refs.header.classList.remove('light-theme');
     refs.header.classList.add('dark-theme');
 
+    refs.footer.classList.remove('light-theme');
+    refs.footer.classList.add('dark-theme');
+
     refs.searchForm.classList.remove('light-theme');
     refs.searchForm.classList.add('dark-theme');
 
@@ -38,6 +41,9 @@ const setLightTheme = () => {
 
     refs.header.classList.remove('dark-theme');
     refs.header.classList.add('light-theme');
+
+    refs.footer.classList.remove('dark-theme');
+    refs.footer.classList.add('light-theme');
 
     refs.searchForm.classList.remove('dark-theme');
     refs.searchForm.classList.add('light-theme');

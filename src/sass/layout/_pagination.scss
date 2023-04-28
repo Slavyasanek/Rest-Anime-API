@@ -57,9 +57,9 @@
 .tui-first-child {
   &.tui-is-selected {
     margin-left: 0;
-    border-left: 1px solid $decorativeColorDark;
+    border-left: 2px solid #ddd;
   }
-  border-left: 1px solid #ddd;
+  border-left: 2px solid #ddd;
 }
 
 .tui-last-child {
