@@ -5,12 +5,15 @@ import { getAnimeInfo } from "./functions/api";
 import { loadFullPoster } from "./functions/createBasiclightbox";
 
 function popupOpen(event) {
+    if (event.target === event.currentTarget) {
+        return;
+    }
     startLoading();
     refs.body.classList.add('lock');
     refs.popup.classList.add('open');
     const currentAnime = event.target.closest('li').id;
     getAnimeInfo(currentAnime)
-    .then(d => {
+        .then(d => {
             console.log(d);
             const popupContent = renderModal(d);
             refs.popupContent.insertAdjacentHTML("beforeend", popupContent);
@@ -18,7 +21,7 @@ function popupOpen(event) {
 
             const curPoster = document.querySelector('.modal__img');
             curPoster.addEventListener("click", loadFullPoster);
-    });
+        });
     refs.popup.addEventListener("click", backdropClose);
     window.addEventListener("keydown", escClose);
 }
@@ -27,7 +30,7 @@ function popupClose() {
     refs.body.classList.remove('lock');
     refs.popup.classList.remove('open');
     refs.popupContent.innerHTML = "";
-    
+
     refs.popup.removeEventListener("click", backdropClose);
     window.removeEventListener("keydown", escClose);
 }
