@@ -115,6 +115,10 @@
       color: $likeColorDark;
       animation: heartbeat 1s infinite;
     }
+    &.is-liked {
+      color: $decorativeGreyColor;
+      animation: none;
+    }
   }
   @include min_768 {
     width: 40px;

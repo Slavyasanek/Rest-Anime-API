@@ -10,4 +10,4 @@ import './js/getRecentUploads';
 import './js/searchAnime';
 import './js/getTopAnime';
 import './js/popup'
-import './js/addLikedAnime';
+import './js/addAnimeStorage';

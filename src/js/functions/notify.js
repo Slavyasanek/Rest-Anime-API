@@ -7,7 +7,6 @@ Notiflix.Notify.init({
 })
 
 export const infoNoResults = () => {
-    console.log(`work`)
     return Notiflix.Notify.info(`No results`, {
         timeout: 3000,
         width: '200px',

@@ -132,6 +132,10 @@ body.lock {
   }
   &__btn {
     padding: 7px 7px 3px 7px;
+    &.is-liked{
+      background-color: $decorativeGreyColor;
+      cursor: default;
+    }
   }
   &__descr {
     margin-top: 20px;

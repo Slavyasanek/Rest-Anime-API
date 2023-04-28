@@ -3,7 +3,7 @@ import { startLoading, finishLoad } from "./functions/loading";
 import renderModal from "./functions/renderModal";
 import { getAnimeInfo } from "./functions/api";
 import { loadFullPoster } from "./functions/createBasiclightbox";
-import { likeAnime } from "./addLikedAnime";
+import { likeAnime, queueAnime } from "./addAnimeStorage";
 
 function popupOpen(event) {
     if (event.target === event.currentTarget || event.target.nodeName === 'SPAN') {
@@ -25,13 +25,15 @@ function popupOpen(event) {
 
             const likeBtn = document.querySelector('[data-like]');
             likeBtn.addEventListener("click", likeAnime);
+
+            const queueBtn = document.querySelector('[data-queue]');
+            queueBtn.addEventListener("click", queueAnime);
             
         });
     refs.popup.addEventListener("click", backdropClose);
     window.addEventListener("keydown", escClose);
 }
 
-console.log(refs.likeBtn);
 
 function popupClose() {
     refs.body.classList.remove('lock');

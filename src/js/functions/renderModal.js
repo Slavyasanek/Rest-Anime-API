@@ -1,4 +1,8 @@
+import { getLikedAnime, getQueueAnime } from "./localStorage";
+
 const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, type, genres, description, otherName, episodes, subOrDub }) => {
+  const isAnimeinQueue = getQueueAnime().includes(id);
+  const isAnimeLiked = getLikedAnime().includes(id);
   const episodeList = episodes.map(episode =>
     `<a href="${episode.url}" target="_blank" rel="noreferrer noopener" class="modal__episode">EP<span class="modal__episode-title">${episode.number}</span></a>
     `
@@ -22,8 +26,8 @@ const renderModal = ({ id, image, releaseDate, title, totalEpisodes, status, typ
   </div>
     </div>
   <div class="modal__btns">
-    <button class="btn--red modal__btn" data-like="${id}">&#x2764</button>
-    <button class="btn--blue modal__btn" data-queue="${id}">Add to queue</button>
+    <button class="btn--red modal__btn  ${isAnimeLiked ? 'is-liked' : ''}" data-like="${id}" > ${isAnimeLiked ? '&#x292C;' : '&#x2764 '}</button>
+    <button class="btn--blue modal__btn  ${isAnimeinQueue ? 'is-liked' : ''}" data-queue="${id}">${isAnimeinQueue ? 'Already in queue' : 'Add to queue'}</button>
   </div>
   <p class="modal__descr">${description}</p>
   <h2 class="modal__suggestion">Watch ${subOrDub === 'dub' ? 'dubbed' : 'subbed'} anime on 
