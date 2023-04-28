@@ -17,8 +17,6 @@ async function getRecentUploads(pageValue) {
     }
 }
 
-getRecentUploads(373).then(d => console.log(d))
-
 async function getAnimeInfo(id) {
     try {
         const { data } = await axios.get(`${URL_FRO_ANIME_INFO}/${id}`);
