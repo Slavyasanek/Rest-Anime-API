@@ -6,3 +6,4 @@ import './js/getTopAnime';
 import './js/popup'
 import './js/addAnimeStorage';
 import './js/renderStorage';
+import './js/dislikeAnimeFromLibrary';

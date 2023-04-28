@@ -1,4 +1,5 @@
 import { getStorageAnime } from "./functions/api";
+import { setCurrentLibrary } from "./functions/changeCurrentLink";
 import { finishLoad, startLoading } from "./functions/loading";
 import { getLikedAnime, getQueueAnime } from "./functions/localStorage";
 import { messageNoAnimeInStorage } from "./functions/notify";
@@ -7,6 +8,10 @@ import { refs } from "./refs";
 
 const renderLike = () => {
     startLoading();
+    setCurrentLibrary('liked');
+    refs.likeBtn.disabled = true;
+    refs.queueBtn.disabled = false;
+
     const message = document.querySelector('.library__message');
     if (message) {
         message.remove();
@@ -28,6 +33,10 @@ const renderLike = () => {
 }
 
 const renderQueue = () => {
+    startLoading();
+    setCurrentLibrary('queue');
+    refs.likeBtn.disabled = false;
+    refs.queueBtn.disabled = true;
     const message = document.querySelector('.library__message');
     if (message) {
         message.remove();
@@ -37,8 +46,15 @@ const renderQueue = () => {
 
     if (queuedAnime.length === 0) {
         refs.storageList.insertAdjacentHTML("afterend", messageNoAnimeInStorage('queued'));
+        finishLoad()
         return;
     }
+    getStorageAnime(queuedAnime)
+    .then(d => {
+        refs.storageList.innerHTML = renderStorageCard(d);
+        finishLoad();
+    })
+    finishLoad();
 }
 
 if (refs.storageList) {

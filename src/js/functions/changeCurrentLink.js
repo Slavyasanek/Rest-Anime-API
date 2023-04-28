@@ -16,3 +16,7 @@ export const setCurrentLink = () => {
         refs.recentBtn.classList.remove('current');
     }
 }
+
+export const setCurrentLibrary = (value) => {
+    return  refs.storageList.dataset.contain = value;
+}

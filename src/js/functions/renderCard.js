@@ -56,7 +56,7 @@ return posts;
 
 const renderStorageCard = (data) => {
     const posts = data.map(({title, image, id, genres}) => {
-        return `<li class="card" id="${id}">
+        return `<li class="card" id="${id}" data-title="${title}">
         <div class="card__thumb">
             <img src="${image}" alt="${title}" class="card__img">
             <p class="card__episode"><span class="card__episode-num">${genres.join(', ')}</span></p>
