@@ -13,18 +13,24 @@ export const removeItemLocal = (key) => {
 }
 
 export const getLikedAnime = () => {
-    return JSON.parse(getItemLocal(LIKED_ANIME));
+    if (getItemLocal(LIKED_ANIME)) {
+        return JSON.parse(getItemLocal(LIKED_ANIME));
+    } else {
+        return []
+    }
 }
 
 export const getQueueAnime = () => {
-    return JSON.parse(getItemLocal(QUEUED_ANIME));
+    if (getItemLocal(QUEUED_ANIME)) {
+        return JSON.parse(getItemLocal(QUEUED_ANIME));
+    } else {
+        return [];
+    }
+
 }
 
 export const addLikedAnime = (id) => {
-    let liked = [];
-    if (getLikedAnime() !== null) {
-        liked = getLikedAnime();
-    }
+    let liked = getLikedAnime();
     if (liked.includes(id)) {
         return;
     }
@@ -33,12 +39,7 @@ export const addLikedAnime = (id) => {
 }
 
 export const removeLikedAnime = (id) => {
-    let liked = [];
-    if (getLikedAnime() === null) {
-        return;
-    } else {
-        liked = getLikedAnime();
-    }
+    let liked = getLikedAnime();
     if (!liked.includes(id)) {
         return;
     } else {
@@ -48,10 +49,7 @@ export const removeLikedAnime = (id) => {
 }
 
 export const addToQueueAnime = (id) => {
-    let queue = [];
-    if (getQueueAnime() !== null) {
-        queue = getQueueAnime();
-    }
+    let queue = getQueueAnime();
     if (queue.includes(id)) {
         return;
     }
@@ -60,12 +58,8 @@ export const addToQueueAnime = (id) => {
 }
 
 export const removeQueuedAnime = (id) => {
-    let queue = [];
-    if (getQueueAnime() === null) {
-        return;
-    } else {
-        queue = getQueueAnime();
-    }
+    let queue = getQueueAnime();
+    
     if (!queue.includes(id)) {
         return;
     } else {
