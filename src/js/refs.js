@@ -29,5 +29,7 @@ export const refs = {
     acceptBody: document.querySelector('.accept__body'),
     acceptCloseBtn: document.querySelector('[accept-popup-close]'),
     acceptCloseIcon: document.querySelector('.accept__close-icon'),
-    acceptQuestion: document.querySelector('.accept__question')
+    acceptQuestion: document.querySelector('.accept__question'),
+    acceptDelete: document.querySelector('[data-delete]'),
+    acceptReject: document.querySelector('[data-reject]')
 }

@@ -1,6 +1,6 @@
 import { refs } from "./refs";
 import { startLoading, finishLoad } from "./functions/loading";
-import renderModal from "./functions/renderModal";
+import { renderModal, renderModalLibrary } from "./functions/renderModal";
 import { getAnimeInfo } from "./functions/api";
 import { loadFullPoster } from "./functions/createBasiclightbox";
 import { likeAnime, queueAnime } from "./addAnimeStorage";
@@ -16,7 +16,14 @@ function popupOpen(event) {
     getAnimeInfo(currentAnime)
         .then(d => {
             console.log(d);
-            const popupContent = renderModal(d);
+
+            let popupContent;
+            if (refs.animeList) {
+                popupContent = renderModal(d);
+            } else if (refs.storageList) {
+                popupContent = renderModalLibrary(d);
+            }
+
             refs.popupContent.insertAdjacentHTML("beforeend", popupContent);
             finishLoad();
 
@@ -24,11 +31,15 @@ function popupOpen(event) {
             curPoster.addEventListener("click", loadFullPoster);
 
             const likeBtn = document.querySelector('[data-like]');
-            likeBtn.addEventListener("click", likeAnime);
-
             const queueBtn = document.querySelector('[data-queue]');
-            queueBtn.addEventListener("click", queueAnime);
-            
+
+            if (likeBtn) {
+                likeBtn.addEventListener("click", likeAnime);
+            }
+            if (queueBtn) {
+                queueBtn.addEventListener("click", queueAnime);
+            }
+
         });
     refs.popup.addEventListener("click", backdropClose);
     window.addEventListener("keydown", escClose);
@@ -60,6 +71,10 @@ function backdropClose(event) {
 
 if (refs.animeList) {
     refs.animeList.addEventListener("click", popupOpen);
+}
+
+if (refs.storageList) {
+    refs.storageList.addEventListener("click", popupOpen);
 }
 
 if (refs.popupCloseBtn) {
