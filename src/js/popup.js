@@ -49,5 +49,11 @@ function backdropClose(event) {
     }
 }
 
-refs.animeList.addEventListener("click", popupOpen);
-refs.popupCloseBtn.addEventListener("click", popupClose);
+if (refs.animeList) {
+    refs.animeList.addEventListener("click", popupOpen);
+}
+
+if (refs.popupCloseBtn) {
+    refs.popupCloseBtn.addEventListener("click", popupClose);
+}
+

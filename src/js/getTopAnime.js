@@ -29,14 +29,17 @@ const outputTopAnime = async () => {
                 refs.animeList.innerHTML = posts;
             })
     })
-    // finishLoad();
 }
 
+if (refs.popularBtn) {
+    refs.popularBtn.addEventListener("click", () => {
+        startLoading();
+        outputTopAnime();
+        finishLoad();
+    });
 
-refs.popularBtn.addEventListener("click", () => {
-    startLoading();
-    outputTopAnime();
-    finishLoad();
-});
+}
 
-window.addEventListener("load", outputTopAnime)
+if (refs.animeList) {
+    window.addEventListener("load", outputTopAnime)
+}

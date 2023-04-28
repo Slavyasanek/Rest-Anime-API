@@ -215,3 +215,17 @@
     padding: 9px 10px 6px 10px;
   }
 }
+
+.back__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  fill: $textColorDarkTheme;
+  padding: 7px 10px 5px 10px;
+  @include min_1440 {
+    font-size: 22px;
+    padding: 9px 10px 6px 10px;
+  }
+}

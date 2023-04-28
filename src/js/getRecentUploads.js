@@ -29,5 +29,6 @@ const getAnime = async () => {
     })
 }
 
-
-refs.recentBtn.addEventListener("click", getAnime);
+if (refs.recentBtn) {
+    refs.recentBtn.addEventListener("click", getAnime);
+}
