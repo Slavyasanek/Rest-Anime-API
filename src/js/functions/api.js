@@ -49,6 +49,15 @@ async function getTopAnime(pageValue) {
         throw new Error(err.message);
     }
 }
- getTopAnime(48).then(d => console.log(d));
- 
-export {getRecentUploads, getAnimeInfo, searchAnime, getTopAnime}
+
+async function getStorageAnime(arr) {
+    const arrayOfAnime= arr.map(async id => {
+        return await axios.get(`${URL_FRO_ANIME_INFO}/${id}`)
+        .then(r => r.data)
+        .catch(e => console.log(e))
+    })
+    const data = await Promise.all(arrayOfAnime);
+    return data;
+}
+
+export {getRecentUploads, getAnimeInfo, searchAnime, getTopAnime, getStorageAnime}
