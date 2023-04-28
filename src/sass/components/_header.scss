@@ -123,6 +123,11 @@
         gap: 40px;
       }
     }
+    &.library-page {
+      @include min_768 {
+        margin-top: 0;
+      }
+    }
   }
 }
 
