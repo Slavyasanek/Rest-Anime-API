@@ -44,4 +44,6 @@ const outputSearchResults = async (event) => {
     })
 }
 
-refs.searchForm.addEventListener('submit', outputSearchResults);
+if (refs.searchForm) {
+    refs.searchForm.addEventListener('submit', outputSearchResults);
+}
