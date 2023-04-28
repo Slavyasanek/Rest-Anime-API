@@ -18,5 +18,8 @@ export const refs = {
     popupCloseBtn: document.querySelector('[data-popup-close]'),
     popupCloseIcon: document.querySelector('.modal__close-icon'),
     popupContent: document.querySelector('.popup__content'),
-    modal: document.querySelector('.modal__body')
+    modal: document.querySelector('.modal__body'),
+    likeBtn: document.querySelector('[data-like]'),
 }
+
+console.log(refs.likeBtn);
