@@ -54,4 +54,21 @@ const renderTopCard = (data) => {
 return posts;
 }
 
-export {renderCard, renderSearchCard, renderTopCard}
+const renderStorageCard = (data) => {
+    const posts = data.map(({title, image, id, genres}) => {
+        return `<li class="card" id="${id}">
+        <div class="card__thumb">
+            <img src="${image}" alt="${title}" class="card__img">
+            <p class="card__episode"><span class="card__episode-num">${genres.join(', ')}</span></p>
+            <div class="add-like">
+                <span class="icon-like is-liked">&#x292B;</span>
+            </div>
+        </div>
+        <h3 class="card__title">${title.replaceAll('"', '')}</h3>
+        </li>`
+    }
+).join("");
+return posts;
+}
+
+export {renderCard, renderSearchCard, renderTopCard , renderStorageCard}
