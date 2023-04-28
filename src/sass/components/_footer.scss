@@ -1,6 +1,7 @@
 .footer {
   padding-top: 40px;
   padding-bottom: 40px;
+  min-width: 300px;
   @include min_1024 {
     padding-top: 20px;
     padding-bottom: 20px;
