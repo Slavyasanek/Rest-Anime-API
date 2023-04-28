@@ -2,28 +2,9 @@ body.lock {
   overflow: hidden;
 }
 
-// backdrop
 .popup {
-  visibility: hidden;
-  position: fixed;
-  pointer-events: none;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  min-width: 320px;
-  background-color: rgba(41, 48, 61, 0.2);
-  backdrop-filter: blur(2px);
-  top: 0;
-  left: 0;
-  opacity: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  transition: all 0.4s ease 0s;
+  @extend %backdrop;
   &.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-
     .popup__content {
       transform: scale(1);
       opacity: 1;
@@ -31,35 +12,78 @@ body.lock {
   }
 }
 
-.modal {
-  &__body {
-    position: absolute;
-    padding: 40px 20px;
-    width: 50%;
-    min-width: 320px;
-    overflow: scroll;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 300px;
-    z-index: 999;
-    &.light-theme {
-      background-color: $mainBcgLightTheme;
-    }
-    &.dark-theme {
-      background-color: $mainBcgDarkTheme;
-    }
-    @include min_768 {
-      overflow: auto;
-      width: 80%;
-    }
-    @include min_1024 {
-      width: 820px;
-    }
-    @include min_1440 {
-      padding: 60px 40px;
+.modal__body {
+  @extend %modal-body;
+  padding: 40px 20px;
+  width: 50%;
+  top: 20px;
+  @include min_768 {
+    overflow: auto;
+    width: 80%;
+  }
+  @include min_1024 {
+    width: 820px;
+  }
+  @include min_1440 {
+    padding: 60px 40px;
+  }
+}
+
+.accept {
+  @extend %backdrop;
+  &.open {
+    .accept__content {
+      transform: scale(1);
+      opacity: 1;
     }
   }
+  &__question {
+    font-size: 20px;
+    text-align: center;
+    @include min_768 {
+      font-size: 22px;
+    }
+    @include min_1024 {
+      font-size: 26px;
+    }
+  }
+  &__btns {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  &__btn {
+    padding: 8px 18px;
+    font-size: 20px;
+  }
+}
+
+.accept__body {
+  @extend %modal-body;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 20px;
+  @include min_768 {
+    width: 400px;
+  }
+  @include min_1024 {
+    width: 600px;
+    padding: 50px;
+  }
+}
+
+.accept__close {
+  @extend .modal__close;
+}
+
+.accept__close-icon {
+  @extend .modal__close-icon;
+}
+
+.modal {
   &__holder {
     @include min_768 {
       display: flex;

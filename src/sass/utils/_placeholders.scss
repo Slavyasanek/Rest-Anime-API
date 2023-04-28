@@ -9,3 +9,42 @@
 %transition {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+%backdrop {
+  visibility: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
+  background-color: rgba(41, 48, 61, 0.2);
+  backdrop-filter: blur(2px);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.4s ease 0s;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+%modal-body {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  z-index: 999;
+  overflow: scroll;
+  &.light-theme {
+    background-color: $mainBcgLightTheme;
+  }
+  &.dark-theme {
+    background-color: $mainBcgDarkTheme;
+  }
+}
+

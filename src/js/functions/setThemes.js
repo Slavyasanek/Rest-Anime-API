@@ -24,6 +24,14 @@ const setDarkTheme = () => {
         refs.searchBtn.classList.add('dark-theme');
     }
 
+    if (refs.acceptBody) {
+        refs.acceptBody.classList.remove('light-theme');
+        refs.acceptBody.classList.add('dark-theme');
+
+        refs.acceptCloseIcon.classList.remove('light-theme');
+        refs.acceptCloseIcon.classList.add('dark-theme');
+    }
+
     refs.modal.classList.remove('light-theme');
     refs.modal.classList.add('dark-theme');
 
@@ -53,6 +61,14 @@ const setLightTheme = () => {
 
         refs.searchBtn.classList.remove('dark-theme');
         refs.searchBtn.classList.add('light-theme');
+    }
+
+    if (refs.acceptBody) {
+        refs.acceptBody.classList.remove('dark-theme');
+        refs.acceptBody.classList.add('light-theme');
+
+        refs.acceptCloseIcon.classList.remove('dark-theme');
+        refs.acceptCloseIcon.classList.add('light-theme');
     }
 
     refs.modal.classList.remove('dark-theme');
