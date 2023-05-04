@@ -31,5 +31,7 @@ export const refs = {
     acceptCloseIcon: document.querySelector('.accept__close-icon'),
     acceptQuestion: document.querySelector('.accept__question'),
     acceptDelete: document.querySelector('[data-delete]'),
-    acceptReject: document.querySelector('[data-reject]')
+    acceptReject: document.querySelector('[data-reject]'),
+
+    miniLoader: document.querySelector('.mini-loader')
 }

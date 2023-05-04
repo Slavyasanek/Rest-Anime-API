@@ -8,10 +8,12 @@ import { setCurrentLink, setDatasetAnimeList } from './functions/changeCurrentLi
 const outputTopAnime = async () => {
     setDatasetAnimeList('top');
     setCurrentLink();
+    startLoading();
     let page = 1;
     const results = await getTopAnime(page);
     let cards = renderTopCard(results.results);
     refs.animeList.innerHTML = cards;
+    finishLoad();
     let totalItems = results.results.length;
     let curLength = results.results.length;
     while (curLength > 0) {
@@ -23,19 +25,18 @@ const outputTopAnime = async () => {
     const pagination = createPagination(totalItems, page);
     pagination.on('beforeMove', ({ page }) => {
         refs.animeList.innerHTML = "";
+        startLoading();
         getTopAnime(page)
             .then(d => {
                 const posts = renderTopCard(d.results);
                 refs.animeList.innerHTML = posts;
-            })
+            }).finally(finishLoad())
     })
 }
 
 if (refs.popularBtn) {
     refs.popularBtn.addEventListener("click", () => {
-        startLoading();
         outputTopAnime();
-        finishLoad();
     });
 
 }
