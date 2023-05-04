@@ -3,6 +3,9 @@
     justify-content: center;
     align-items: center;
     transform: scale(0.5);
+    @include min_1024 {
+        transform: scale(0.8);
+    }
 }
 
 .lds-roller {

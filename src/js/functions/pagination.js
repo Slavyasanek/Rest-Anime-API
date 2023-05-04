@@ -3,6 +3,10 @@ import { refs } from '../refs';
 
 
 export const createPaginationForRecentRealese = (totalItems) => {
+    if (refs.miniLoader) {
+        refs.pagination.style.display = 'none';
+        refs.miniLoader.style.display = 'flex';
+    }
     const options = {
         itemsPerPage: totalItems,
         totalItems: 372 * 20 + 4,
@@ -10,6 +14,8 @@ export const createPaginationForRecentRealese = (totalItems) => {
         centerAlign: true,
     }
     const pagination = new Pagination(refs.pagination, options);
+    refs.pagination.style.display = 'block';
+    refs.miniLoader.style.display = 'none';
     return pagination;
 }
 
