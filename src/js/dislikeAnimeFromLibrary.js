@@ -1,6 +1,7 @@
 import { finishLoad, startLoading } from "./functions/loading";
 import { removeLikedAnime, removeQueuedAnime } from "./functions/localStorage";
 import { refs } from "./refs";
+import { messageNoAnimeInStorage } from "./functions/notify";
 
 const openAccept = (event) => {
     if (event.target.nodeName !== 'SPAN' || !event.target.classList.contains('icon-like')) {
@@ -35,7 +36,14 @@ const removeAnimeFromStorage = (event) => {
         if (elem.id === curId) {
             elem.remove()
         }
-    }) 
+    })
+    if (storageListElements.length === 0) {
+        if (refs.storageList.dataset.contain === 'liked') {
+            refs.storageList.insertAdjacentHTML("afterend", messageNoAnimeInStorage('liked'));
+        } else {
+            refs.storageList.insertAdjacentHTML("afterend", messageNoAnimeInStorage('queued'));
+        }
+    }
     closeDislikeAccept();
 }
 

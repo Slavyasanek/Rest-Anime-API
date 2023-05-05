@@ -7,6 +7,9 @@ body {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     &.dark-theme {
         background-color: $mainBcgDarkTheme;
         color: $textColorDarkTheme;
@@ -15,6 +18,10 @@ body {
         background-color: $mainBcgLightTheme;
         color: $textColorLightTheme;
     }
+}
+
+main {
+    flex-grow: 1;
 }
 
 ul, ol {
