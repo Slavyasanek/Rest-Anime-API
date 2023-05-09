@@ -1,7 +1,7 @@
 import { refs } from "./refs";
 import { startLoading, finishLoad } from "./functions/loading";
 import { renderModal, renderModalLibrary } from "./functions/renderModal";
-import { getAnimeInfo } from "./functions/api";
+import { getAnimeInfo } from "./functions/apiAnime";
 import { loadFullPoster } from "./functions/createBasiclightbox";
 import { likeAnime, queueAnime } from "./addAnimeStorage";
 
