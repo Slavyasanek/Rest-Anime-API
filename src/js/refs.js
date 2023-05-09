@@ -33,5 +33,7 @@ export const refs = {
     acceptDelete: document.querySelector('[data-delete]'),
     acceptReject: document.querySelector('[data-reject]'),
 
-    miniLoader: document.querySelector('.mini-loader')
+    miniLoader: document.querySelector('.mini-loader'),
+    swiperWrapper: document.querySelector('.swiper-wrapper'),
+    swiper: document.querySelector('.swiper'),
 }

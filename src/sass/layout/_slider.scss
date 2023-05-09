@@ -1,0 +1,64 @@
+.slider {
+  padding-bottom: 20px;
+  @include max_767 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  @include min_768 {
+    padding-bottom: 40px;
+  }
+  .swiper {
+    display: flex;
+    justify-content: center;
+    &-slide {
+      background-color: $oddColorDarkTheme;
+      border-radius: 10px;
+      padding: 30px 20px 10px;
+      box-shadow: inset 7px 5px 50px -33px rgba(114, 137, 218, 1);
+      opacity: 0.2;
+      transform: scale(0.7);
+      @extend %transition;
+      &.swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+      @include min_768 {
+        padding: 30px 20px 20px;
+      }
+    }
+    &__quote {
+      margin: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    &__speech {
+      font-style: italic;
+      font-size: 16px;
+      max-width: 300px;
+      text-align: center;
+      align-self: center;
+      @include min_768 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        max-width: 600px;
+      }
+      @include min_1440 {
+        max-width: 100%;
+        margin-bottom: 0;
+      }
+    }
+    &__cite {
+      font-size: 14px;
+      text-align: end;
+      font-style: normal;
+      @include min_768 {
+        font-size: 18px;
+      }
+    }
+    &__feature {
+      color: $decorativeColor;
+    }
+  }
+}

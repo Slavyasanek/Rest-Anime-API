@@ -7,4 +7,4 @@ import './js/addAnimeStorage';
 import './js/renderStorage';
 import './js/dislikeAnimeFromLibrary';
 import './js/functions/apiQuote';
-import './js/renderQuotes';
+import './js/insertQuotes';
