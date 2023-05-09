@@ -36,4 +36,5 @@ export const refs = {
     miniLoader: document.querySelector('.mini-loader'),
     swiperWrapper: document.querySelector('.swiper-wrapper'),
     swiper: document.querySelector('.swiper'),
+
 }

@@ -37,6 +37,14 @@ const setDarkTheme = () => {
 
     refs.popupCloseIcon.classList.remove('light-theme');
     refs.popupCloseIcon.classList.add('dark-theme');
+
+    const swiperSlides = document.querySelectorAll('.swiper-slide');
+    if(swiperSlides) {
+        swiperSlides.forEach(slide => {
+            slide.classList.remove('light-theme');
+            slide.classList.add('dark-theme');
+        })
+    }
 }
 
 const setLightTheme = () => {
@@ -76,6 +84,15 @@ const setLightTheme = () => {
 
     refs.popupCloseIcon.classList.remove('dark-theme');
     refs.popupCloseIcon.classList.add('light-theme');
+
+    const swiperSlides = document.querySelectorAll('.swiper-slide');
+
+    if (swiperSlides) {
+        swiperSlides.forEach(slide => {
+            slide.classList.add('light-theme');
+            slide.classList.remove('dark-theme');
+        })
+    }
 }
 
 export { setDarkTheme, setLightTheme };
