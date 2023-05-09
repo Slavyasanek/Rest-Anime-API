@@ -1,10 +1,11 @@
-import { getStorageAnime } from "./functions/api";
+import { getStorageAnime } from "./functions/apiAnime";
 import { setCurrentLibrary } from "./functions/changeCurrentLink";
 import { finishLoad, startLoading } from "./functions/loading";
 import { getLikedAnime, getQueueAnime } from "./functions/localStorage";
 import { messageNoAnimeInStorage } from "./functions/notify";
 import { renderStorageCard } from "./functions/renderCard";
 import { refs } from "./refs";
+import { createLibraryPagination } from "./functions/renderPagination";
 
 const renderLike = () => {
     startLoading();
@@ -20,16 +21,17 @@ const renderLike = () => {
     const likedAnime = getLikedAnime();
     if (likedAnime.length === 0) {
         refs.storageList.insertAdjacentHTML("afterend", messageNoAnimeInStorage('liked'));
+        refs.pagination.style.display = "none";
         finishLoad();
         return;
     }
     getStorageAnime(likedAnime)
-    .then(d => {
-        const amountOfLikedAnime = d.length;
-        
-        refs.storageList.innerHTML = renderStorageCard(d);
-        finishLoad();
-    })
+        .then(d => {
+            const amountOfLikedAnime = d.length;
+            refs.storageList.innerHTML = renderStorageCard(d.slice(0, 10));
+            createLibraryPagination(d, amountOfLikedAnime);
+            finishLoad();
+        })
 }
 
 const renderQueue = () => {
@@ -46,14 +48,16 @@ const renderQueue = () => {
 
     if (queuedAnime.length === 0) {
         refs.storageList.insertAdjacentHTML("afterend", messageNoAnimeInStorage('queued'));
+        refs.pagination.style.display = "none";
         finishLoad()
         return;
     }
     getStorageAnime(queuedAnime)
-    .then(d => {
-        refs.storageList.innerHTML = renderStorageCard(d);
-        finishLoad();
-    })
+        .then(d => {
+            const amountOfQueued = d.length;
+            refs.storageList.innerHTML = renderStorageCard(d.slice(0, 10));
+            createLibraryPagination(d, amountOfQueued)
+        })
     finishLoad();
 }
 

@@ -19,13 +19,13 @@ export const createPaginationForRecentRealese = (totalItems) => {
     return pagination;
 }
 
-export const createPagination = (totalItems, page) => {
+export const createPagination = (itemsPerPage, totalItems, page) => {
     if (refs.miniLoader) {
         refs.pagination.style.display = 'none';
         refs.miniLoader.style.display = 'flex';
     }
     const options = {
-        itemsPerPage: 20,
+        itemsPerPage: itemsPerPage,
         totalItems: totalItems,
         visiblePages: page > 5 ? 5 : page,
         centerAlign: true,
@@ -36,6 +36,9 @@ export const createPagination = (totalItems, page) => {
     } else {
         refs.pagination.style.display = 'none';
     }
+    if (refs.miniLoader) {
     refs.miniLoader.style.display = 'none';
+    }
     return pagination;
 }
+

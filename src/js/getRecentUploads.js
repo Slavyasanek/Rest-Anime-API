@@ -1,4 +1,4 @@
-import { getRecentUploads } from "./functions/api";
+import { getRecentUploads } from "./functions/apiAnime";
 import { refs } from './refs';
 import { createPaginationForRecentRealese } from "./functions/pagination";
 import { renderCard } from './functions/renderCard';

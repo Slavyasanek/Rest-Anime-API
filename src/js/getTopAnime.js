@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import { renderTopCard } from './functions/renderCard';
 import { finishLoad, startLoading } from "./functions/loading";
-import { getTopAnime } from './functions/api';
+import { getTopAnime } from './functions/apiAnime';
 import { createPagination } from './functions/pagination';
 import { setCurrentLink, setDatasetAnimeList } from './functions/changeCurrentLink';
 
@@ -22,7 +22,7 @@ const outputTopAnime = async () => {
         curLength = nextResults.results.length;
         totalItems += nextResults.results.length;
     }
-    const pagination = createPagination(totalItems, page);
+    const pagination = createPagination(10, totalItems, page);
     pagination.on('beforeMove', ({ page }) => {
         refs.animeList.innerHTML = "";
         startLoading();

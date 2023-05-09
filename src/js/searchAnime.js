@@ -2,7 +2,7 @@ import { refs } from './refs';
 import { createPagination } from "./functions/pagination";
 import { renderSearchCard } from './functions/renderCard';
 import { finishLoad, startLoading } from "./functions/loading";
-import { searchAnime } from './functions/api';
+import { searchAnime } from './functions/apiAnime';
 import { infoNoResults } from './functions/notify';
 import { setCurrentLink, setDatasetAnimeList } from './functions/changeCurrentLink';
 
@@ -34,7 +34,7 @@ const outputSearchResults = async (event) => {
         hasNextPage = nextResults.hasNextPage;
     }
     finishLoad();
-    const pagination = createPagination(totalItems, page);
+    const pagination = createPagination(totalItems > 20 ? 20 : totalItems, totalItems, page);
     pagination.on('beforeMove', ({ page }) => {
         refs.animeList.innerHTML = "";
         searchAnime(query, page).then(d => {
