@@ -1,5 +1,5 @@
 import './js/color-switcher';
-import './js/functions/api'
+import './js/functions/apiAnime'
 import './js/getRecentUploads';
 import './js/searchAnime';
 import './js/getTopAnime';
@@ -7,3 +7,5 @@ import './js/popup'
 import './js/addAnimeStorage';
 import './js/renderStorage';
 import './js/dislikeAnimeFromLibrary';
+import './js/functions/apiQuote';
+import './js/renderQuotes';

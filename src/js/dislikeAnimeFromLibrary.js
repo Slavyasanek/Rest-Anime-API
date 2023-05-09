@@ -2,6 +2,7 @@ import { finishLoad, startLoading } from "./functions/loading";
 import { removeLikedAnime, removeQueuedAnime } from "./functions/localStorage";
 import { refs } from "./refs";
 import { messageNoAnimeInStorage } from "./functions/notify";
+import { createLibraryPagination } from "./functions/renderPagination";
 
 const openAccept = (event) => {
     if (event.target.nodeName !== 'SPAN' || !event.target.classList.contains('icon-like')) {
