@@ -1,5 +1,4 @@
 import './js/color-switcher';
-import './js/functions/apiAnime'
 import './js/getRecentUploads';
 import './js/searchAnime';
 import './js/getTopAnime';

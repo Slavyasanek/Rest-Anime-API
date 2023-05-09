@@ -9,5 +9,6 @@ export const createLibraryPagination = (data, amount) => {
         startLoading();
             refs.storageList.innerHTML = renderStorageCard(data.slice(page * 10 - 10, page * 10));
         finishLoad();
-    })
+    });
+    return pagination;
 }

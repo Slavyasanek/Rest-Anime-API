@@ -7,7 +7,10 @@ import { renderStorageCard } from "./functions/renderCard";
 import { refs } from "./refs";
 import { createLibraryPagination } from "./functions/renderPagination";
 
-const renderLike = () => {
+
+export let storagePaginationHolder;
+
+export const renderLike = () => {
     startLoading();
     setCurrentLibrary('liked');
     refs.likeBtn.disabled = true;
@@ -29,7 +32,7 @@ const renderLike = () => {
         .then(d => {
             const amountOfLikedAnime = d.length;
             refs.storageList.innerHTML = renderStorageCard(d.slice(0, 10));
-            createLibraryPagination(d, amountOfLikedAnime);
+            storagePaginationHolder = createLibraryPagination(d, amountOfLikedAnime);
             finishLoad();
         })
 }
@@ -56,7 +59,8 @@ const renderQueue = () => {
         .then(d => {
             const amountOfQueued = d.length;
             refs.storageList.innerHTML = renderStorageCard(d.slice(0, 10));
-            createLibraryPagination(d, amountOfQueued)
+            storagePaginationHolder = createLibraryPagination(d, amountOfQueued);
+            finishLoad();
         })
     finishLoad();
 }

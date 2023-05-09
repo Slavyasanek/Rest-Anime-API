@@ -37,7 +37,7 @@ export const createPagination = (itemsPerPage, totalItems, page) => {
         refs.pagination.style.display = 'none';
     }
     if (refs.miniLoader) {
-    refs.miniLoader.style.display = 'none';
+        refs.miniLoader.style.display = 'none';
     }
     return pagination;
 }
