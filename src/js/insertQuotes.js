@@ -52,6 +52,6 @@ const insertQuotes =  async () => {
     initializeSwiper();
 }
 
-if (refs.swiper) {
+if (refs.swiper && window.matchMedia('(min-width: 768px)').matches) {
     window.addEventListener("load", insertQuotes);
-}
+} 
