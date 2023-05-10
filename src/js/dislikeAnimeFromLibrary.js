@@ -65,8 +65,6 @@ const removeAnimeFromStorage = async (event) => {
         pagination.movePageTo(Math.ceil(currentAnimeInStorage.length / 10))
     } else {
         pagination.movePageTo(currentPage);
-        const addAnimeOnCurrentPage = gotAnime.slice(currentPage * 10 - 10 + 9, currentPage * 10);
-        refs.storageList.insertAdjacentHTML("beforeend", renderStorageCard(addAnimeOnCurrentPage));
     }
 
     closeDislikeAccept();
