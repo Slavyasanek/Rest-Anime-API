@@ -7,6 +7,9 @@
   @include min_768 {
     padding-bottom: 40px;
   }
+  @include min_1440 {
+    padding-bottom: 15px;
+  }
   .swiper {
     display: flex;
     justify-content: center;
@@ -15,7 +18,7 @@
       padding: 30px 20px 10px;
       box-shadow: inset 7px 5px 50px -33px rgba(114, 137, 218, 1);
       opacity: 0.2;
-      transform: scale(0.7);
+      transform: scale(0.9);
       @extend %transition;
       &.light-theme {
         background-color: $oddColorLightTheme;
