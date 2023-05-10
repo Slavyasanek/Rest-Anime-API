@@ -7,22 +7,28 @@ import { initializeSwiper } from './functions/swiper';
 
 const DATE_KEY = 'cur-date';
 const QUOTES_KEY = 'quotes';
+const today = new Date().getDate();
 
 const getDate = () => {
-    let curdate;
-    if (getItemLocal(DATE_KEY)) {
-        curdate = getItemLocal(DATE_KEY);
-    } else {
-        curdate = new Date().getDate();
+    let curdate = JSON.parse(getItemLocal(DATE_KEY));
+
+    if (curdate && curdate === today) {
+        return true;
+    } else if (!curdate) {
+        curdate = today;
         setItemLocal(DATE_KEY, curdate);
+        return false;
+    } else if (curdate && curdate !== today) {
+        setItemLocal(DATE_KEY, today);
+        curdate = today;
+        return false;
     }
-    return curdate;
 }
 
-
 const setQuotesLocalStorage = async () => {
+    const areQuotesLoaded = getDate();
     let quotes;
-    if (getDate() === getItemLocal(DATE_KEY)) {
+    if (areQuotesLoaded) {
         quotes = JSON.parse(getItemLocal(QUOTES_KEY));
     } else {
         setItemLocal(DATE_KEY, new Date().getDate());
@@ -32,15 +38,17 @@ const setQuotesLocalStorage = async () => {
     return quotes;
 }
 
-
-
-// setQuotesLocalStorage()
+const checkQuotesLength = async () => {
+    const quotes = await setQuotesLocalStorage();
+    const shortOnes =  quotes.filter(({quote}) => 
+        quote.length < 120
+    )
+    return shortOnes;
+}
 
 const insertQuotes =  async () => {
-    const quotes = await setQuotesLocalStorage();
-
+    const quotes = await checkQuotesLength();
     refs.swiperWrapper.innerHTML = renderQuotes(quotes);
-
     initializeSwiper();
 }
 
